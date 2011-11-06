@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>JsDoc Reference - jComp</title>
+		<title>JsDoc Reference - jComp.struct.Queue</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -204,7 +204,7 @@ ul.inheritsList
 <!-- ============================== class title ============================ -->
 			<h1 class="classTitle">
 				
-				Class jComp
+				Class jComp.struct.Queue
 			</h1>
 
 <!-- ============================== class summary ========================== -->			
@@ -212,16 +212,16 @@ ul.inheritsList
 				
 				
 			
-				The jComp singleton. Globally available.
+				Queue A queue for handling FIFO tasks
 				
 				
-					<br /><i>Defined in: </i> <a href="../symbols/src/projects_web_jComp_jComp.js.html">jComp.js</a>.
+					<br /><i>Defined in: </i> <a href="../symbols/src/projects_web_jComp_struct_Queue.js.html">Queue.js</a>.
 				
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
 			
-			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class jComp.">
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class jComp.struct.Queue.">
 				<caption>Class Summary</caption>
 				<thead>
 					<tr>
@@ -234,7 +234,7 @@ ul.inheritsList
 						<td class="attributes">&nbsp;</td>
 						<td class="nameDescription" >
 							<div class="fixedFont">
-								<b><a href="../symbols/jComp.html#constructor">jComp</a></b>()
+								<b><a href="../symbols/jComp.struct.Queue.html#constructor">jComp.struct.Queue</a></b>()
 							</div>
 							<div class="description"></div>
 						</td>
@@ -250,7 +250,7 @@ ul.inheritsList
 			
 				
 				
-				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class jComp.">
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class jComp.struct.Queue.">
 					<caption>Method Summary</caption>
 					<thead>
 						<tr>
@@ -263,18 +263,36 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/jComp.html#getPrecision">getPrecision</a></b>()
+								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Queue.html#empty">empty</a></b>()
 								</div>
-								<div class="description">Get the precision used for floating point numbers</div>
+								<div class="description">Determine if the queue is empty</div>
 							</td>
 						</tr>
 					
 						<tr>
 							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/jComp.html#setPrecision">setPrecision</a></b>(precision)
+								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Queue.html#front">front</a></b>()
 								</div>
-								<div class="description">Set the precision used for floating point numbers</div>
+								<div class="description">Get the object at the front of the queue without removing it</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Queue.html#pop">pop</a></b>()
+								</div>
+								<div class="description">Remove the object at the front of the queue</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Queue.html#push">push</a></b>(value)
+								</div>
+								<div class="description">Add an object to the back of the queue</div>
 							</td>
 						</tr>
 					
@@ -295,7 +313,7 @@ ul.inheritsList
 				</div>
 				
 				<div class="fixedFont">
-						<b>jComp</b>()
+						<b>jComp.struct.Queue</b>()
 				</div>
 				
 				<div class="description">
@@ -326,15 +344,15 @@ ul.inheritsList
 					Method Detail
 				</div>
 				
-					<a name="getPrecision"> </a>
+					<a name="empty"> </a>
 					<div class="fixedFont">
 					
-					<span class="light">{Integer}</span>
-					<b>getPrecision</b>()
+					<span class="light">{Boolean}</span>
+					<b>empty</b>()
 					
 					</div>
 					<div class="description">
-						Get the precision used for floating point numbers
+						Determine if the queue is empty
 						
 						
 					</div>
@@ -349,7 +367,7 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{Integer}</span> The precision used for floating point numbers</dd>
+								<dd><span class="light fixedFont">{Boolean}</span> true if the queue is empty, false if it is not</dd>
 							
 							</dl>
 						
@@ -358,15 +376,79 @@ ul.inheritsList
 
 					<hr />
 				
-					<a name="setPrecision"> </a>
+					<a name="front"> </a>
 					<div class="fixedFont">
 					
-					
-					<b>setPrecision</b>(precision)
+					<span class="light">{Object}</span>
+					<b>front</b>()
 					
 					</div>
 					<div class="description">
-						Set the precision used for floating point numbers
+						Get the object at the front of the queue without removing it
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Object}</span> The object at the front of the queue. Does not remove the object</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="pop"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{Object}</span>
+					<b>pop</b>()
+					
+					</div>
+					<div class="description">
+						Remove the object at the front of the queue
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Object}</span> The object at the front of the queue that has just been removed</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="push"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>push</b>(value)
+					
+					</div>
+					<div class="description">
+						Add an object to the back of the queue
 						
 						
 					</div>
@@ -378,10 +460,10 @@ ul.inheritsList
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{Integer}</span> <b>precision</b>
+									<span class="light fixedFont">{Object}</span> <b>value</b>
 									
 								</dt>
-								<dd>The precision that should be used for floating point numbers</dd>
+								<dd>The value to be added to the queue. Can be any type of object</dd>
 							
 							</dl>
 						

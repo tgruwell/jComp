@@ -29,6 +29,8 @@ var jComp = function(){
 	};
 }
 
+jComp.struct = {};
+
 /** 
 	Round a number based on the globally defined precision. See {@link jComp#setPrecision}
 	@param {Float} number A floating point number to round
