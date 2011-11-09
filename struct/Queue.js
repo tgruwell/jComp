@@ -1,5 +1,5 @@
 /**
-	@class Queue A queue for handling FIFO tasks
+	@class A queue for handling FIFO tasks
 */
 jComp.struct.Queue = function(){
 	this._aryData = [];
@@ -9,8 +9,16 @@ jComp.struct.Queue = function(){
 	Determine if the queue is empty
 	@returns {Boolean} true if the queue is empty, false if it is not
 */
-jComp.struct.Queue.prototype.empty = function(){
+jComp.struct.Queue.prototype.isEmpty = function(){
 	return this._aryData.length == 0;
+}
+
+/**
+	Get the number of items in the queue
+	@returns {Integer} The number of items in the queue
+*/
+jComp.struct.Queue.prototype.size = function(){
+	return this._aryData.length;
 }
 
 /**

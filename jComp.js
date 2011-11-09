@@ -29,6 +29,9 @@ var jComp = function(){
 	};
 }
 
+/**
+	@namespace General purpose data structures
+*/
 jComp.struct = {};
 
 /** 

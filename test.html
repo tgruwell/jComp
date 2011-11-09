@@ -1,0 +1,134 @@
+<html>
+	<head>
+		<title>Test</title>
+		<script type="text/javascript" src="jComp.js"></script>
+		<script type="text/javascript" src="struct/Queue.js"></script>
+		<script type="text/javascript" src="struct/Set.js"></script>
+		
+		<script type="text/javascript">			
+			var suites = [
+				{suite: "struct", case: "TestQueue"},
+				{suite: "struct", case: "TestSet"}
+			];
+			
+		</script>
+		
+		<style>
+			.fail td {
+				border-top: 1px solid #fff;
+				background-color: #ffcccc;
+				color: #cc3333;
+			}
+			
+			.pass td {
+				border-top: 1px solid #fff;
+				background-color: #ccffcc;
+				color: #336633;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="controls">
+			<select id="cases">
+				<option value="0">All</option>
+			</select>
+			
+			<input type="button" value="Run" onclick="run();" />
+		</div>
+		
+		<table cellspacing="0" cellpadding="2" id="results">
+		<tr>
+			<td width="200">Test Case</td>
+			<td width="400">Result</td>
+		</tr>
+		</table>
+		
+		<iframe id="testcaseframe" src="testCase.html?case=none" style="display: none;">
+			Your browser needs to support iframes in order to run tests.
+		</iframe>
+		
+		<script type="text/javascript">
+			var currentCaseName = "";
+			var currentCaseIndex = 0;
+			var runningAll = false;
+		
+			for(var i=0; i<suites.length; i++){
+				var opt = document.createElement("option");
+				opt.setAttribute("value", i);
+				opt.appendChild(document.createTextNode(suites[i].case));
+				document.getElementById("cases").appendChild(opt);
+			}
+		
+			function run(){
+				currentCaseIndex = document.getElementById("cases").value;
+				var testCasePath = suites[currentCaseIndex].suite + "/" + suites[currentCaseIndex].case + ".js"
+				currentCaseName = suites[currentCaseIndex].case;
+				
+				if(document.getElementById("cases").selectedIndex == 0){
+					runningAll = true;
+				}
+				
+				document.getElementById("testcaseframe").setAttribute("src","testCase.html?case=" + testCasePath);
+			}
+			
+			function next(){
+				if(runningAll && currentCaseIndex < suites.length-1){
+					currentCaseIndex++;
+					var testCasePath = suites[currentCaseIndex].suite + "/" + suites[currentCaseIndex].case + ".js"
+					currentCaseName = suites[currentCaseIndex].case;
+					document.getElementById("testcaseframe").setAttribute("src","testCase.html?case=" + testCasePath);
+				}else{
+					runningAll = false;
+				}
+			}
+			
+			function testCaseFailed(message){
+				var tr = document.createElement("tr");
+				tr.className = "fail";
+				tr.innerHTML = "<td>"+currentCaseName+"</td><td>"+message+"</td>";
+				document.getElementById("results").appendChild(tr);
+				next();
+			}
+			
+			function testCasePassed(){
+				var tr = document.createElement("tr");
+				tr.className = "pass";
+				tr.innerHTML = "<td>"+currentCaseName+"</td><td>Success</td>";
+				document.getElementById("results").appendChild(tr);
+				next();
+			}
+			
+			var prec = 5;
+			var precx = Math.pow(10,prec);
+			
+			
+			
+			var count = 0;
+			var done = false;
+			
+			function stop(){done = true;}
+			var t1 = (new Date()).getTime();
+			while(count < 100000){
+				//$f(count);
+				//var a = count + 1;
+				$f(12422.442+count);
+				count++;
+			}
+			var t2 = (new Date()).getTime();
+			
+			console.log("diff", (Math.round((100000/(t2 - t1)) * 1000)/1000000).toFixed(2), "M per second");
+			
+			function test(){
+				return (0.1 * 0.2).toFixed(2);
+			}
+			console.log(0.1 * 0.7);
+			
+			console.log(count);
+			console.log($f(0.1 * 0.2));
+			console.log(1/10);
+			console.log(1/3);
+			console.log(12.00000000000000005 <= 12);
+			console.log(test() == 0.02);
+		</script>
+	</body>
+</html>

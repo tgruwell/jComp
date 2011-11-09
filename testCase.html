@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Test Case</title>
+		<script type="text/javascript" src="jComp.js"></script>
+		<script type="text/javascript" src="struct/Queue.js"></script>
+		<script type="text/javascript" src="struct/Set.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var querystringvalues = (new RegExp("\\?case=(.*)")).exec(window.location.href);
+			loadScript(querystringvalues[1]);
+			
+			function loadScript(script){
+				var s = document.createElement("script");
+				s.setAttribute("type", "text/javascript");
+				s.setAttribute("src", script);
+				document.body.appendChild(s);
+			}
+			
+			var failed = false;
+			
+			function fail(message){
+				if(failed) return;
+				failed = true;
+				window.parent.testCaseFailed(message);
+			}
+			
+			function pass(){
+				if(failed) return;
+				window.parent.testCasePassed();
+			}
+			
+			function assertTrue(v, message){
+				if(!v) fail(message);
+			}
+			
+			function assertFalse(v, message){
+				if(v) fail(message);
+			}
+			
+			function assertEquals(v1, v2, message){
+				if(v1 != v2) fail(message);
+			}
+		</script>
+	</body>
+</html>

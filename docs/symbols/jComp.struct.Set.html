@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>JsDoc Reference - jComp</title>
+		<title>JsDoc Reference - jComp.struct.Set</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -208,7 +208,7 @@ ul.inheritsList
 <!-- ============================== class title ============================ -->
 			<h1 class="classTitle">
 				
-				Class jComp
+				Class jComp.struct.Set
 			</h1>
 
 <!-- ============================== class summary ========================== -->			
@@ -216,16 +216,16 @@ ul.inheritsList
 				
 				
 			
-				The jComp singleton. Globally available.
+				A generic set object
 				
 				
-					<br /><i>Defined in: </i> <a href="../symbols/src/projects_web_jComp_jComp.js.html">jComp.js</a>.
+					<br /><i>Defined in: </i> <a href="../symbols/src/projects_web_jComp_struct_Set.js.html">Set.js</a>.
 				
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
 			
-			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class jComp.">
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class jComp.struct.Set.">
 				<caption>Class Summary</caption>
 				<thead>
 					<tr>
@@ -238,7 +238,7 @@ ul.inheritsList
 						<td class="attributes">&nbsp;</td>
 						<td class="nameDescription" >
 							<div class="fixedFont">
-								<b><a href="../symbols/jComp.html#constructor">jComp</a></b>()
+								<b><a href="../symbols/jComp.struct.Set.html#constructor">jComp.struct.Set</a></b>()
 							</div>
 							<div class="description"></div>
 						</td>
@@ -249,17 +249,12 @@ ul.inheritsList
 
 <!-- ============================== properties summary ===================== -->
 			
-				
-				
-				
-				
-			
 
 <!-- ============================== methods summary ======================== -->
 			
 				
 				
-				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class jComp.">
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class jComp.struct.Set.">
 					<caption>Method Summary</caption>
 					<thead>
 						<tr>
@@ -272,18 +267,54 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/jComp.html#getPrecision">getPrecision</a></b>()
+								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Set.html#contains">contains</a></b>(value)
 								</div>
-								<div class="description">Get the precision used for floating point numbers</div>
+								<div class="description">Determine if the set contains this item</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">jComp.struct.Set.<b><a href="../symbols/jComp.struct.Set.html#.each">each</a></b>(f)
+								</div>
+								<div class="description">Iterate over the items in the set</div>
 							</td>
 						</tr>
 					
 						<tr>
 							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/jComp.html#setPrecision">setPrecision</a></b>(precision)
+								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Set.html#insert">insert</a></b>(value)
 								</div>
-								<div class="description">Set the precision used for floating point numbers</div>
+								<div class="description">Insert an item into the set if the set does not already contain that item</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Set.html#isEmpty">isEmpty</a></b>()
+								</div>
+								<div class="description">Determine if the set is empty</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Set.html#size">size</a></b>()
+								</div>
+								<div class="description">Get the number of items in the set</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Set.html#union">union</a></b>(otherSet)
+								</div>
+								<div class="description">Union this set with another set.</div>
 							</td>
 						</tr>
 					
@@ -304,7 +335,7 @@ ul.inheritsList
 				</div>
 				
 				<div class="fixedFont">
-						<b>jComp</b>()
+						<b>jComp.struct.Set</b>()
 				</div>
 				
 				<div class="description">
@@ -335,15 +366,144 @@ ul.inheritsList
 					Method Detail
 				</div>
 				
-					<a name="getPrecision"> </a>
+					<a name="contains"> </a>
 					<div class="fixedFont">
 					
-					<span class="light">{Integer}</span>
-					<b>getPrecision</b>()
+					<span class="light">{Boolean}</span>
+					<b>contains</b>(value)
 					
 					</div>
 					<div class="description">
-						Get the precision used for floating point numbers
+						Determine if the set contains this item
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{Object}</span> <b>value</b>
+									
+								</dt>
+								<dd>The item to look for</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> true if the set contains the item, false if it does not</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".each"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Boolean}</span>
+					<span class="light">jComp.struct.Set.</span><b>each</b>(f)
+					
+					</div>
+					<div class="description">
+						Iterate over the items in the set
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{Function}</span> <b>f</b>
+									
+								</dt>
+								<dd>The function to execute for each item in the set. If the function returns false then the iterator will halt</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> true if the iterator processed all items without being terminated. false if the iterator was told to terminate before completion</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="insert"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>insert</b>(value)
+					
+					</div>
+					<div class="description">
+						Insert an item into the set if the set does not already contain that item
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{Object}</span> <b>value</b>
+									
+								</dt>
+								<dd>An item to be inserted into the set</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd>void</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="isEmpty"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{Boolean}</span>
+					<b>isEmpty</b>()
+					
+					</div>
+					<div class="description">
+						Determine if the set is empty
 						
 						
 					</div>
@@ -358,7 +518,7 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{Integer}</span> The precision used for floating point numbers</dd>
+								<dd><span class="light fixedFont">{Boolean}</span> true if the set is empty, false if it is not</dd>
 							
 							</dl>
 						
@@ -367,15 +527,47 @@ ul.inheritsList
 
 					<hr />
 				
-					<a name="setPrecision"> </a>
+					<a name="size"> </a>
 					<div class="fixedFont">
 					
-					
-					<b>setPrecision</b>(precision)
+					<span class="light">{Integer}</span>
+					<b>size</b>()
 					
 					</div>
 					<div class="description">
-						Set the precision used for floating point numbers
+						Get the number of items in the set
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Integer}</span> The number of items in the set</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="union"> </a>
+					<div class="fixedFont">
+					
+					
+					<b>union</b>(otherSet)
+					
+					</div>
+					<div class="description">
+						Union this set with another set. After the function, this set will have all of the elements of set that was passed in.
 						
 						
 					</div>
@@ -387,10 +579,10 @@ ul.inheritsList
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{Integer}</span> <b>precision</b>
+									<span class="light fixedFont">{<a href="../symbols/jComp.struct.Set.html">jComp.struct.Set</a>}</span> <b>otherSet</b>
 									
 								</dt>
-								<dd>The precision that should be used for floating point numbers</dd>
+								<dd>The set with which to union</dd>
 							
 							</dl>
 						
