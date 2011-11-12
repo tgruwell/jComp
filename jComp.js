@@ -34,6 +34,11 @@ var jComp = function(){
 */
 jComp.struct = {};
 
+/**
+	@namespace General purpose geometry classes and methods
+*/
+jComp.geo = {};
+
 /** 
 	Round a number based on the globally defined precision. See {@link jComp#setPrecision}
 	@param {Float} number A floating point number to round

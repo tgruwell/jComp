@@ -2,25 +2,25 @@
 	<head>
 		<title>Test</title>
 		<script type="text/javascript" src="jComp.js"></script>
-		<script type="text/javascript" src="struct/Queue.js"></script>
-		<script type="text/javascript" src="struct/Set.js"></script>
 		
 		<script type="text/javascript">			
 			var suites = [
 				{suite: "struct", case: "TestQueue"},
-				{suite: "struct", case: "TestSet"}
+				{suite: "struct", case: "TestSet"},
+				{suite: "geo", case: "TestGeo"},
+				{suite: "geo", case: "TestPoint"}
 			];
 			
 		</script>
 		
 		<style>
-			.fail td {
+			.fail {
 				border-top: 1px solid #fff;
 				background-color: #ffcccc;
 				color: #cc3333;
 			}
 			
-			.pass td {
+			.pass {
 				border-top: 1px solid #fff;
 				background-color: #ccffcc;
 				color: #336633;
@@ -84,17 +84,15 @@
 			
 			function testCaseFailed(message){
 				var tr = document.createElement("tr");
-				tr.className = "fail";
-				tr.innerHTML = "<td>"+currentCaseName+"</td><td>"+message+"</td>";
 				document.getElementById("results").appendChild(tr);
+				tr.innerHTML = "<td class='fail'>"+currentCaseName+"</td><td class='fail'>"+message+"</td>";
 				next();
 			}
 			
 			function testCasePassed(){
 				var tr = document.createElement("tr");
-				tr.className = "pass";
-				tr.innerHTML = "<td>"+currentCaseName+"</td><td>Success</td>";
 				document.getElementById("results").appendChild(tr);
+				tr.innerHTML = "<td class='pass'>"+currentCaseName+"</td><td class='pass'>Success</td>";
 				next();
 			}
 			

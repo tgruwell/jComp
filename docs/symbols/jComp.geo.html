@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>JsDoc Reference - jComp.struct</title>
+		<title>JsDoc Reference - jComp.geo</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -212,7 +212,7 @@ ul.inheritsList
 <!-- ============================== class title ============================ -->
 			<h1 class="classTitle">
 				
-				Namespace jComp.struct
+				Namespace jComp.geo
 			</h1>
 
 <!-- ============================== class summary ========================== -->			
@@ -220,7 +220,7 @@ ul.inheritsList
 				
 				
 			
-				General purpose data structures
+				General purpose geometry classes and methods
 				
 				
 					<br /><i>Defined in: </i> <a href="../symbols/src/projects_web_jComp_jComp.js.html">jComp.js</a>.
@@ -229,7 +229,7 @@ ul.inheritsList
 
 <!-- ============================== constructor summary ==================== -->			
 			
-			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class jComp.struct.">
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class jComp.geo.">
 				<caption>Namespace Summary</caption>
 				<thead>
 					<tr>
@@ -242,7 +242,7 @@ ul.inheritsList
 						<td class="attributes">&nbsp;</td>
 						<td class="nameDescription" >
 							<div class="fixedFont">
-								<b><a href="../symbols/jComp.struct.html#constructor">jComp.struct</a></b>
+								<b><a href="../symbols/jComp.geo.html#constructor">jComp.geo</a></b>
 							</div>
 							<div class="description"></div>
 						</td>
@@ -256,6 +256,42 @@ ul.inheritsList
 
 <!-- ============================== methods summary ======================== -->
 			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class jComp.geo.">
+					<caption>Method Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">jComp.geo.<b><a href="../symbols/jComp.geo.html#.dimensions">dimensions</a></b>(obj)
+								</div>
+								<div class="description">Determine the number of dimensions an object exists in.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">jComp.geo.<b><a href="../symbols/jComp.geo.html#.distance">distance</a></b>(point1, point2)
+								</div>
+								<div class="description">Determine the distance between two points.</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
 <!-- ============================== events summary ======================== -->
 			
 
@@ -267,7 +303,7 @@ ul.inheritsList
 				</div>
 				
 				<div class="fixedFont">
-						<b>jComp.struct</b>
+						<b>jComp.geo</b>
 				</div>
 				
 				<div class="description">
@@ -293,6 +329,110 @@ ul.inheritsList
 			
 
 <!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					Method Detail
+				</div>
+				
+					<a name=".dimensions"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Integer}</span>
+					<span class="light">jComp.geo.</span><b>dimensions</b>(obj)
+					
+					</div>
+					<div class="description">
+						Determine the number of dimensions an object exists in.
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/projects_web_jComp_geo_Geo.js.html">Geo.js</a>.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{Object}</span> <b>obj</b>
+									
+								</dt>
+								<dd>An object to look at, for example a point or a line</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Integer}</span> The number of dimensions an object exists in</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".distance"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Float}</span>
+					<span class="light">jComp.geo.</span><b>distance</b>(point1, point2)
+					
+					</div>
+					<div class="description">
+						Determine the distance between two points. Assumes both points have the same number of dimensions
+	but bases it off of the number of dimensions point1 is in.
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/projects_web_jComp_geo_Geo.js.html">Geo.js</a>.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/jComp.geo.Point.html">jComp.geo.Point</a>}</span> <b>point1</b>
+									
+								</dt>
+								<dd>The first point</dd>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/jComp.geo.Point.html">jComp.geo.Point</a>}</span> <b>point2</b>
+									
+								</dt>
+								<dd>The second point</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Float}</span> The distance between the two points</dd>
+							
+							</dl>
+						
+						
+						
+
+					
+				
 			
 			
 <!-- ============================== event details ========================= -->		

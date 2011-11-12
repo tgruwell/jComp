@@ -4,6 +4,8 @@
 		<script type="text/javascript" src="jComp.js"></script>
 		<script type="text/javascript" src="struct/Queue.js"></script>
 		<script type="text/javascript" src="struct/Set.js"></script>
+		<script type="text/javascript" src="geo/Geo.js"></script>
+		<script type="text/javascript" src="geo/Point.js"></script>
 	</head>
 	<body>
 		<script type="text/javascript">
@@ -39,7 +41,7 @@
 			}
 			
 			function assertEquals(v1, v2, message){
-				if(v1 != v2) fail(message);
+				if(v1 != v2) fail(message + " expected " + v2 + ", got " + v1);
 			}
 		</script>
 	</body>
