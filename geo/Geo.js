@@ -48,3 +48,35 @@ jComp.geo.distance = function(point1, point2){
 	}
 	return 0;
 }
+
+/**
+	Determines if two geometric objects are equal to each other. As in their points, lines, etc are numerically the same
+	@param {Object} obj1 The first object to compare
+	@param {Object} obj2 The second object to compare
+	@returns {Boolean} true if the objects are numerically the same, false if they are not
+*/
+jComp.geo.equals = function(obj1, obj2){
+	// TODO: make this work for other objects besides points
+	
+	if(obj1.length == 3){
+		// 3 dimensional
+		return (obj1[0] == obj2[0] && obj1[1] == obj2[1] && obj1[2] == obj2[2]);	
+		
+	}else if(obj1.length == 2){
+		// 2 dimensional
+		return (obj1[0] == obj2[0] && obj1[1] == obj2[1]);
+		
+	}else if(obj1.length > 3){
+		// N dimensional
+		for(var i=0; i<obj1.length; i++){
+			if(obj1[i] != obj2[i]) return false;
+		}
+		return true;
+		
+	}else if(obj1.length == 1){
+		// 1 dimensional
+		return obj1[0] == obj2[0];
+	}
+	
+	return true;
+}
