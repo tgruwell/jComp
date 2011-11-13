@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>JsDoc Reference - jComp</title>
+		<title>JsDoc Reference - jComp.geo.Line</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -214,7 +214,7 @@ ul.inheritsList
 <!-- ============================== class title ============================ -->
 			<h1 class="classTitle">
 				
-				Class jComp
+				Class jComp.geo.Line
 			</h1>
 
 <!-- ============================== class summary ========================== -->			
@@ -222,16 +222,16 @@ ul.inheritsList
 				
 				
 			
-				The jComp singleton. Globally available.
+				A 2-dimensional line.
 				
 				
-					<br /><i>Defined in: </i> <a href="../symbols/src/projects_web_jComp_jComp.js.html">jComp.js</a>.
+					<br /><i>Defined in: </i> <a href="../symbols/src/projects_web_jComp_geo_Line.js.html">Line.js</a>.
 				
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
 			
-			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class jComp.">
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class jComp.geo.Line.">
 				<caption>Class Summary</caption>
 				<thead>
 					<tr>
@@ -244,7 +244,7 @@ ul.inheritsList
 						<td class="attributes">&nbsp;</td>
 						<td class="nameDescription" >
 							<div class="fixedFont">
-								<b><a href="../symbols/jComp.html#constructor">jComp</a></b>()
+								<b><a href="../symbols/jComp.geo.Line.html#constructor">jComp.geo.Line</a></b>(slope, yIntercept, xIntercept)
 							</div>
 							<div class="description"></div>
 						</td>
@@ -255,17 +255,12 @@ ul.inheritsList
 
 <!-- ============================== properties summary ===================== -->
 			
-				
-				
-				
-				
-			
 
 <!-- ============================== methods summary ======================== -->
 			
 				
 				
-				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class jComp.">
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class jComp.geo.Line.">
 					<caption>Method Summary</caption>
 					<thead>
 						<tr>
@@ -278,18 +273,36 @@ ul.inheritsList
 						<tr>
 							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/jComp.html#getPrecision">getPrecision</a></b>()
+								<div class="fixedFont"><b><a href="../symbols/jComp.geo.Line.html#equals">equals</a></b>(line)
 								</div>
-								<div class="description">Get the precision used for floating point numbers</div>
+								<div class="description">Determine if two lines occupy the same space (have the same slope and y-intercept)</div>
 							</td>
 						</tr>
 					
 						<tr>
 							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/jComp.html#setPrecision">setPrecision</a></b>(precision)
+								<div class="fixedFont"><b><a href="../symbols/jComp.geo.Line.html#getIntersection">getIntersection</a></b>(line)
 								</div>
-								<div class="description">Set the precision used for floating point numbers</div>
+								<div class="description">Determine where two lines intersect</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jComp.geo.Line.html#isParallelTo">isParallelTo</a></b>(line)
+								</div>
+								<div class="description">Determine if two lines are parallel</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont"><b><a href="../symbols/jComp.geo.Line.html#isPerpendicularTo">isPerpendicularTo</a></b>(line)
+								</div>
+								<div class="description">Determine if two lines are perpendicular</div>
 							</td>
 						</tr>
 					
@@ -310,7 +323,7 @@ ul.inheritsList
 				</div>
 				
 				<div class="fixedFont">
-						<b>jComp</b>()
+						<b>jComp.geo.Line</b>(slope, yIntercept, xIntercept)
 				</div>
 				
 				<div class="description">
@@ -321,6 +334,29 @@ ul.inheritsList
 				
 				
 				
+					
+						<dl class="detailList">
+						<dt class="heading">Parameters:</dt>
+						
+							<dt>
+								<span class="light fixedFont">{Float}</span>  <b>slope</b>
+								
+							</dt>
+								<dd>The slope of the line. Should be a value between 0 and Infinity</dd>
+						
+							<dt>
+								<span class="light fixedFont">{Float}</span>  <b>yIntercept</b>
+								
+							</dt>
+								<dd>Needed when the slope not Infinity</dd>
+						
+							<dt>
+								<span class="light fixedFont">{Float}</span>  <b>xIntercept</b>
+								
+							</dt>
+								<dd>Needed when the slope is Infinity</dd>
+						
+						</dl>
 					
 					
 					
@@ -341,47 +377,15 @@ ul.inheritsList
 					Method Detail
 				</div>
 				
-					<a name="getPrecision"> </a>
+					<a name="equals"> </a>
 					<div class="fixedFont">
 					
-					<span class="light">{Integer}</span>
-					<b>getPrecision</b>()
+					<span class="light">{Boolean}</span>
+					<b>equals</b>(line)
 					
 					</div>
 					<div class="description">
-						Get the precision used for floating point numbers
-						
-						
-					</div>
-					
-					
-					
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Integer}</span> The precision used for floating point numbers</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name="setPrecision"> </a>
-					<div class="fixedFont">
-					
-					
-					<b>setPrecision</b>(precision)
-					
-					</div>
-					<div class="description">
-						Set the precision used for floating point numbers
+						Determine if two lines occupy the same space (have the same slope and y-intercept)
 						
 						
 					</div>
@@ -393,10 +397,10 @@ ul.inheritsList
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{Integer}</span> <b>precision</b>
+									<span class="light fixedFont">{<a href="../symbols/jComp.geo.Line.html">jComp.geo.Line</a>}</span> <b>line</b>
 									
 								</dt>
-								<dd>The precision that should be used for floating point numbers</dd>
+								<dd>A line to compare</dd>
 							
 							</dl>
 						
@@ -407,7 +411,136 @@ ul.inheritsList
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd>void</dd>
+								<dd><span class="light fixedFont">{Boolean}</span> true if the lines occupy the same space</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="getIntersection"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{<a href="../symbols/jComp.geo.Point.html">jComp.geo.Point</a>}</span>
+					<b>getIntersection</b>(line)
+					
+					</div>
+					<div class="description">
+						Determine where two lines intersect
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/jComp.geo.Line.html">jComp.geo.Line</a>}</span> <b>line</b>
+									
+								</dt>
+								<dd>A line to compare</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/jComp.geo.Point.html">jComp.geo.Point</a>}</span> The point where they intersect. null if they do not intersect or if they exist in the same space</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="isParallelTo"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{Boolean}</span>
+					<b>isParallelTo</b>(line)
+					
+					</div>
+					<div class="description">
+						Determine if two lines are parallel
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/jComp.geo.Line.html">jComp.geo.Line</a>}</span> <b>line</b>
+									
+								</dt>
+								<dd>A line to compare</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> true if the lines are parallel, false if they are not</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name="isPerpendicularTo"> </a>
+					<div class="fixedFont">
+					
+					<span class="light">{Boolean}</span>
+					<b>isPerpendicularTo</b>(line)
+					
+					</div>
+					<div class="description">
+						Determine if two lines are perpendicular
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/jComp.geo.Line.html">jComp.geo.Line</a>}</span> <b>line</b>
+									
+								</dt>
+								<dd>A line to compare</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Boolean}</span> true if the lines are perpendicular, false if they are not</dd>
 							
 							</dl>
 						
