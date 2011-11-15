@@ -14,10 +14,12 @@
 			loadScript(querystringvalues[1]);
 			
 			function loadScript(script){
-				var s = document.createElement("script");
-				s.setAttribute("type", "text/javascript");
-				s.setAttribute("src", script);
-				document.body.appendChild(s);
+				if(script != "none"){
+					var s = document.createElement("script");
+					s.setAttribute("type", "text/javascript");
+					s.setAttribute("src", script);
+					document.body.appendChild(s);
+				}
 			}
 			
 			var failed = false;

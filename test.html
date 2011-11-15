@@ -5,12 +5,14 @@
 		
 		<script type="text/javascript">			
 			var suites = [
-				{suite: "struct", case: "TestQueue"},
-				{suite: "struct", case: "TestSet"},
-				{suite: "geo", case: "TestGeo"},
-				{suite: "geo", case: "TestPoint"},
-				{suite: "geo", case: "TestLine"}
+				{suite: "struct", testcase: "TestQueue"},
+				{suite: "struct", testcase: "TestSet"},
+				{suite: "geo", testcase: "TestGeo"},
+				{suite: "geo", testcase: "TestPoint"},
+				{suite: "geo", testcase: "TestLine"}
 			];
+			
+			suites.asdf = "123";
 			
 		</script>
 		
@@ -37,7 +39,7 @@
 			<input type="button" value="Run" onclick="run();" />
 		</div>
 		
-		<table cellspacing="0" cellpadding="2" id="results">
+		<table cellspacing="0" cellpadding="2" id="results" border="0">
 		<tr>
 			<td width="200">Test Case</td>
 			<td width="400">Result</td>
@@ -56,14 +58,14 @@
 			for(var i=0; i<suites.length; i++){
 				var opt = document.createElement("option");
 				opt.setAttribute("value", i);
-				opt.appendChild(document.createTextNode(suites[i].case));
+				opt.appendChild(document.createTextNode(suites[i].testcase));
 				document.getElementById("cases").appendChild(opt);
 			}
 		
 			function run(){
 				currentCaseIndex = document.getElementById("cases").value;
-				var testCasePath = suites[currentCaseIndex].suite + "/" + suites[currentCaseIndex].case + ".js"
-				currentCaseName = suites[currentCaseIndex].case;
+				var testCasePath = suites[currentCaseIndex].suite + "/" + suites[currentCaseIndex].testcase + ".js"
+				currentCaseName = suites[currentCaseIndex].testcase;
 				
 				if(document.getElementById("cases").selectedIndex == 0){
 					runningAll = true;
@@ -75,8 +77,8 @@
 			function next(){
 				if(runningAll && currentCaseIndex < suites.length-1){
 					currentCaseIndex++;
-					var testCasePath = suites[currentCaseIndex].suite + "/" + suites[currentCaseIndex].case + ".js"
-					currentCaseName = suites[currentCaseIndex].case;
+					var testCasePath = suites[currentCaseIndex].suite + "/" + suites[currentCaseIndex].testcase + ".js"
+					currentCaseName = suites[currentCaseIndex].testcase;
 					document.getElementById("testcaseframe").setAttribute("src","testCase.html?case=" + testCasePath);
 				}else{
 					runningAll = false;
@@ -85,15 +87,29 @@
 			
 			function testCaseFailed(message){
 				var tr = document.createElement("tr");
-				document.getElementById("results").appendChild(tr);
-				tr.innerHTML = "<td class='fail'>"+currentCaseName+"</td><td class='fail'>"+message+"</td>";
+				var td1 = document.createElement("td");
+				var td2 = document.createElement("td");
+				td1.className = 'fail';
+				td1.appendChild(document.createTextNode(currentCaseName));
+				tr.appendChild(td1);
+				td2.className = 'fail';
+				td2.appendChild(document.createTextNode(message));
+				tr.appendChild(td2);
+				document.getElementById("results").getElementsByTagName("TBODY")[0].appendChild(tr);
 				next();
 			}
 			
 			function testCasePassed(){
 				var tr = document.createElement("tr");
-				document.getElementById("results").appendChild(tr);
-				tr.innerHTML = "<td class='pass'>"+currentCaseName+"</td><td class='pass'>Success</td>";
+				var td1 = document.createElement("td");
+				var td2 = document.createElement("td");
+				td1.className = 'pass';
+				td1.appendChild(document.createTextNode(currentCaseName));
+				tr.appendChild(td1);
+				td2.className = 'pass';
+				td2.appendChild(document.createTextNode("Success"));
+				tr.appendChild(td2);
+				document.getElementById("results").getElementsByTagName("TBODY")[0].appendChild(tr);
 				next();
 			}
 			/*

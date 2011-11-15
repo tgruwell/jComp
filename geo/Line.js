@@ -76,3 +76,13 @@ jComp.geo.Line.prototype.getIntersection = function(line){
 	return new jComp.geo.Point($f(x), $f(y));
 }
 
+/**
+	Determine if a point falls on this line
+	@param {jComp.geo.Point} point The point to check
+	@param {Float} tolerance How accurate the determination should be. For example, setting to 0.001 will allow 3.123 to fall on the line as well as 3.124
+	@return {Boolean} true if the point falls on the line, false if it doesn't
+*/
+jComp.geo.Line.prototype.isPointOnLine = function(point, tolerance){
+	var y = point[0]*this._m + this._b;
+	return Math.abs(y-point[1]) <= tolerance;
+}
