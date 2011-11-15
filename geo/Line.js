@@ -1,13 +1,26 @@
 /**
-	@class A 2-dimensional line.
-	@param {Float} slope The slope of the line. Should be a value between 0 and Infinity
-	@param {Float} yIntercept Needed when the slope not Infinity
-	@param {Float} xIntercept Needed when the slope is Infinity
+	@class A 2-dimensional line. Can be specified by either providing the slope and one of the intercepts, or by providing two points that make up the line
+	@constructor
+	@param {Object} params A structure with keys for the attributes of the line.
+	@param {Float} params.slope The slope of the line. Should be a value between 0 and Infinity
+	@param {Float} params.yIntercept Needed when the slope not Infinity
+	@param {Float} params.xIntercept Needed when the slope is Infinity
+	@param {jComp.geo.Point} params.pointA A point that exists on the line
+	@param {jComp.geo.Point} params.pointB Another point that exists on the line
 */
-jComp.geo.Line = function(slope, yIntercept, xIntercept){
-	this._m = slope;
-	this._b = yIntercept;
-	this._x = xIntercept;
+jComp.geo.Line = function(params){
+	if(params.slope){
+		this._m = params.slope;
+		this._b = params.yIntercept;
+		this._x = params.xIntercept;
+	}else{
+		this._dy = params.pointA[1] - params.pointB[1];
+		this._dx = params.pointA[0] - params.pointB[0];
+		this._m = this._dy / this._dx;
+		if(this._m == -Infinity) this._m = Infinity;
+		this._b = params.pointA[1] - (this._m * params.pointA[0]);
+		this._x = params.pointA[0];
+	}
 }
 
 /**

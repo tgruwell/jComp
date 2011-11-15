@@ -10,7 +10,7 @@ jComp.struct.Set = function(){
 	@param {Function} f The function to execute for each item in the set. If the function returns false then the iterator will halt
 	@returns {Boolean} true if the iterator processed all items without being terminated. false if the iterator was told to terminate before completion
 */
-jComp.struct.Set.each = function(f){
+jComp.struct.Set.prototype.each = function(f){
 	var blnTerminated = false;
 	for(var i=0; i<this._aryData; i++){
 		if(!f(this, this._aryData[i])){
