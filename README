@@ -1,1 +1,4 @@
 jComp is a general purpose JavaScript library for things related to math and computer science.
+
+To run tests your web browser must allow local files to be included inside of an iframe.
+If using Google Chrome, run with the --allow-file-access-from-files option
