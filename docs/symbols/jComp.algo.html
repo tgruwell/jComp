@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>JsDoc Reference - jComp.struct.Set</title>
+		<title>JsDoc Reference - jComp.algo</title>
 
 		<style type="text/css">
 			/* default.css */
@@ -216,7 +216,7 @@ ul.inheritsList
 <!-- ============================== class title ============================ -->
 			<h1 class="classTitle">
 				
-				Class jComp.struct.Set
+				Namespace jComp.algo
 			</h1>
 
 <!-- ============================== class summary ========================== -->			
@@ -224,17 +224,17 @@ ul.inheritsList
 				
 				
 			
-				A generic set object
+				General purpose algorithms
 				
 				
-					<br /><i>Defined in: </i> <a href="../symbols/src/projects_web_jComp_struct_Set.js.html">Set.js</a>.
+					<br /><i>Defined in: </i> <a href="../symbols/src/projects_web_jComp_jComp.js.html">jComp.js</a>.
 				
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
 			
-			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class jComp.struct.Set.">
-				<caption>Class Summary</caption>
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class jComp.algo.">
+				<caption>Namespace Summary</caption>
 				<thead>
 					<tr>
 						<th scope="col">Constructor Attributes</th>
@@ -246,7 +246,7 @@ ul.inheritsList
 						<td class="attributes">&nbsp;</td>
 						<td class="nameDescription" >
 							<div class="fixedFont">
-								<b><a href="../symbols/jComp.struct.Set.html#constructor">jComp.struct.Set</a></b>()
+								<b><a href="../symbols/jComp.algo.html#constructor">jComp.algo</a></b>
 							</div>
 							<div class="description"></div>
 						</td>
@@ -262,7 +262,7 @@ ul.inheritsList
 			
 				
 				
-				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class jComp.struct.Set.">
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class jComp.algo.">
 					<caption>Method Summary</caption>
 					<thead>
 						<tr>
@@ -273,56 +273,11 @@ ul.inheritsList
 					<tbody>
 					
 						<tr>
-							<td class="attributes">&nbsp;</td>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
 							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Set.html#contains">contains</a></b>(value)
+								<div class="fixedFont">jComp.algo.<b><a href="../symbols/jComp.algo.html#.insertionSort">insertionSort</a></b>(obj, asc)
 								</div>
-								<div class="description">Determine if the set contains this item</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Set.html#each">each</a></b>(f)
-								</div>
-								<div class="description">Iterate over the items in the set</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Set.html#insert">insert</a></b>(value)
-								</div>
-								<div class="description">Insert an item into the set if the set does not already contain that item</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Set.html#isEmpty">isEmpty</a></b>()
-								</div>
-								<div class="description">Determine if the set is empty</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Set.html#size">size</a></b>()
-								</div>
-								<div class="description">Get the number of items in the set</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/jComp.struct.Set.html#union">union</a></b>(otherSet)
-								</div>
-								<div class="description">Union this set with another set.</div>
+								<div class="description">Sort the input array using the insertion sort method.</div>
 							</td>
 						</tr>
 					
@@ -339,11 +294,11 @@ ul.inheritsList
 			
 			<div class="details"><a name="constructor"> </a>
 				<div class="sectionTitle">
-					Class Detail
+					Namespace Detail
 				</div>
 				
 				<div class="fixedFont">
-						<b>jComp.struct.Set</b>()
+						<b>jComp.algo</b>
 				</div>
 				
 				<div class="description">
@@ -374,15 +329,18 @@ ul.inheritsList
 					Method Detail
 				</div>
 				
-					<a name="contains"> </a>
-					<div class="fixedFont">
+					<a name=".insertionSort"> </a>
+					<div class="fixedFont">&lt;static&gt; 
 					
-					<span class="light">{Boolean}</span>
-					<b>contains</b>(value)
+					
+					<span class="light">jComp.algo.</span><b>insertionSort</b>(obj, asc)
 					
 					</div>
 					<div class="description">
-						Determine if the set contains this item
+						Sort the input array using the insertion sort method.
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/projects_web_jComp_algo_InsertionSort.js.html">InsertionSort.js</a>.
 						
 						
 					</div>
@@ -394,216 +352,22 @@ ul.inheritsList
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{Object}</span> <b>value</b>
+									<span class="light fixedFont">{Array}</span> <b>obj</b>
 									
 								</dt>
-								<dd>The item to look for</dd>
-							
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Boolean}</span> true if the set contains the item, false if it does not</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name="each"> </a>
-					<div class="fixedFont">
-					
-					<span class="light">{Boolean}</span>
-					<b>each</b>(f)
-					
-					</div>
-					<div class="description">
-						Iterate over the items in the set
-						
-						
-					</div>
-					
-					
-					
-						
-							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
+								<dd>An array of numbers to sort</dd>
 							
 								<dt>
-									<span class="light fixedFont">{Function}</span> <b>f</b>
+									<span class="light fixedFont">{Boolean}</span> <b>asc</b>
 									
 								</dt>
-								<dd>The function to execute for each item in the set. If the function returns false then the iterator will halt</dd>
+								<dd>Boolean value indicating the direction to sort. True for ascending. False for decending.</dd>
 							
 							</dl>
 						
 						
 						
 						
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Boolean}</span> true if the iterator processed all items without being terminated. false if the iterator was told to terminate before completion</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name="insert"> </a>
-					<div class="fixedFont">
-					
-					
-					<b>insert</b>(value)
-					
-					</div>
-					<div class="description">
-						Insert an item into the set if the set does not already contain that item
-						
-						
-					</div>
-					
-					
-					
-						
-							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
-							
-								<dt>
-									<span class="light fixedFont">{Object}</span> <b>value</b>
-									
-								</dt>
-								<dd>An item to be inserted into the set</dd>
-							
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd>void</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name="isEmpty"> </a>
-					<div class="fixedFont">
-					
-					<span class="light">{Boolean}</span>
-					<b>isEmpty</b>()
-					
-					</div>
-					<div class="description">
-						Determine if the set is empty
-						
-						
-					</div>
-					
-					
-					
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Boolean}</span> true if the set is empty, false if it is not</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name="size"> </a>
-					<div class="fixedFont">
-					
-					<span class="light">{Integer}</span>
-					<b>size</b>()
-					
-					</div>
-					<div class="description">
-						Get the number of items in the set
-						
-						
-					</div>
-					
-					
-					
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Integer}</span> The number of items in the set</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name="union"> </a>
-					<div class="fixedFont">
-					
-					
-					<b>union</b>(otherSet)
-					
-					</div>
-					<div class="description">
-						Union this set with another set. After the function, this set will have all of the elements of set that was passed in.
-						
-						
-					</div>
-					
-					
-					
-						
-							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
-							
-								<dt>
-									<span class="light fixedFont">{<a href="../symbols/jComp.struct.Set.html">jComp.struct.Set</a>}</span> <b>otherSet</b>
-									
-								</dt>
-								<dd>The set with which to union</dd>
-							
-							</dl>
-						
-						
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd>void</dd>
-							
-							</dl>
 						
 						
 						

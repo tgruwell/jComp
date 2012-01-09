@@ -30,6 +30,11 @@ var jComp = function(){
 }
 
 /**
+	@namespace General purpose algorithms
+*/
+jComp.algo = {};
+
+/**
 	@namespace General purpose data structures
 */
 jComp.struct = {};
